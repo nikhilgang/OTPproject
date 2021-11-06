@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   api:
-    image: "rajat0206/otpapp:1.0"
+    image: "rajat0206/otpapp:1.1"
     ports:
       - "8080:8080"
     depends_on:
