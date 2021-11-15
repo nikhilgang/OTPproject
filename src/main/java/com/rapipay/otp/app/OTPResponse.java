@@ -28,4 +28,10 @@ public class OTPResponse {
     public void setStatus(boolean status) {
         this.status = status;
     }
+
+	@Override
+	public String toString() {
+		return "OTPResponse [message=" + message + ", status=" + status + "]";
+	}
+    
 }

@@ -10,4 +10,6 @@ import java.util.List;
 public interface OTPRepository extends JpaRepository<OTP, Integer> {
 
     List<OTP> findByEmailAndOtpAndVerified(String email, Integer otp,boolean verified);
+    List<OTP> findByEmailAndVerified(String email,boolean verified);
+    List<OTP> findByPhoneNoAndVerified(Long phoneNo,boolean verified);
 }

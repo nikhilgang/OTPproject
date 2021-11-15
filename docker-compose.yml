@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   api:
-    image: "rajat0206/otpapp:1.1"
+    image: "otp-app"
     ports:
       - "8080:8080"
     depends_on:
@@ -10,7 +10,7 @@ services:
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/rapipay
       - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=321in#@!
+      - SPRING_DATASOURCE_PASSWORD=root
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
 
   db:
@@ -20,9 +20,9 @@ services:
     ports:
       - "8001:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD=321in#@!
+      - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=rapipay
-      - MYSQL_PASSWORD=321in#@!
+      - MYSQL_PASSWORD=root
     healthcheck:
       test: ["CMD", "mysqladmin", "-u", "root", "ping"]
       interval: 10s
