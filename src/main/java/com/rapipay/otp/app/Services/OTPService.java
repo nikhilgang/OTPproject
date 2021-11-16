@@ -53,7 +53,7 @@ public class OTPService {
     	
     	LOGGER.info("Inside sendOTP Service");
     	List<OTP>checkEmail=dao.findByEmailAndVerified(inputotp.getEmail(), false);
-    	int i=1;
+    	int i=0;
         for(OTP b:checkEmail) {
         	System.out.println("----------");
         	if (b.getCreated_at() > (new Date().getTime() / 1000) - time) {
@@ -111,7 +111,7 @@ public class OTPService {
         }
 
         for(OTP o : otps) {
-                if (o.getCreated_at() > (new Date().getTime() / 1000) - 300) {
+                if (o.getCreated_at() > (new Date().getTime() / 1000) - time) {
                     o.setVerified(true);
                     dao.save(o);
                     response.setMessage("OTP verified successfully");
